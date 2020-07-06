@@ -37,12 +37,24 @@ else{console.log(`${employee.Job_title} ${employee.name} doesn't report to anybo
 
 const cipher ={a:2,b:3, c:4, d:5,};
 
-function decoded(word){
+function decode(word){
   if (word[0]<'e'){
     return word[cipher[word[0]]-1];
   } else {
     return ' ';
   }
 }
+decode('dycle');
 
-decoded('dycle');
+function decodeWords(string){
+  let sentence= '';
+  if (string.length <= 4){
+    for (let i=0; i<string.length;i++) {
+      sentence += decode(string);
+    }
+  } else {
+    return 'Word is too short!';
+  }
+  console.log(sentence);
+}
+decodeWords('Write a function called');
