@@ -27,6 +27,8 @@ const Michael ={name:'Michael Scott', Job_title:'Regional Manager'};
 const Angela ={name:'Angela', Job_title:'Accountant'};
 const Dwight ={name:'Dwight K Schrute', Job_title:'Assistant to the Regional Manager'};
 
-const Scranton = {{name:'Jim Halpert', Job_title:'Sales'}, {name:'Pam Beasly', Job_title:'Receptionist'}, {name:'Michael Scott', Job_title:'Regional Manager'}, {name:'Angela', Job_title:'Accountant'}, {name:'Dwight K Schrute', Job_title:'Assistant to the Regional Manager'}};
+const Scranton = [Jim, Pam, Michael, Angela, Dwight];
 
-console.log(Scranton);
+for ( const employee of Scranton) {
+  console.log(`${employee.name}: ${employee.Job_title}`);
+}
