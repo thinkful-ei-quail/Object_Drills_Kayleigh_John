@@ -1,61 +1,57 @@
 /* eslint-disable no-console */
 'use strict';
 
-const loaf = {flour: 300, water: 210, hydration: function(){
-  return  this.water / this.flour * 100;
-} };
+const loaf = {
+  flour: 300, water: 210, hydration: function () {
+    return this.water / this.flour * 100;
+  }
+};
 
 console.log(loaf.flour);
 console.log(loaf.water);
 console.log(loaf.hydration());
 
-const object = {foo:1, bar:2, fum:3, quux:4,spam:'spamspamspam'};
+const object = { foo: 1, bar: 2, fum: 3, quux: 4, spam: 'spamspamspam' };
 
-for ( const property in object) {
+for (const property in object) {
   console.log(`${property}:${object[property]}`);
 }
 
 
-const hobbitMeals = {meals:['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper']};
+const hobbitMeals = { meals: ['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper'] };
 
 console.log(hobbitMeals.meals[3]);
 
 
-const Jim ={name:'Jim Halpert', Job_title:'Salesman', boss:'Michael'};
-const Pam ={name:'Pam Beasly', Job_title:'Receptionist', boss:'Michael'};
-const Michael ={name:'Michael Scott', Job_title:'Regional Manager'};
-const Angela ={name:'Angela', Job_title:'Accountant', boss:'Michael'};
-const Dwight ={name:'Dwight K Schrute', Job_title:'Assistant to the Regional Manager', boss:'Michael'};
+const Jim = { name: 'Jim Halpert', Job_title: 'Salesman', boss: 'Michael' };
+const Pam = { name: 'Pam Beasly', Job_title: 'Receptionist', boss: 'Michael' };
+const Michael = { name: 'Michael Scott', Job_title: 'Regional Manager' };
+const Angela = { name: 'Angela', Job_title: 'Accountant', boss: 'Michael' };
+const Dwight = { name: 'Dwight K Schrute', Job_title: 'Assistant to the Regional Manager', boss: 'Michael' };
 
 const Scranton = [Jim, Pam, Michael, Angela, Dwight];
 
-for ( const employee of Scranton) {if(employee.boss){
-  console.log(`${employee.Job_title} ${employee.name} reports to ${employee.boss}.`);}
-else{console.log(`${employee.Job_title} ${employee.name} doesn't report to anybody.`);}
+for (const employee of Scranton) {
+  if (employee.boss) {
+    console.log(`${employee.Job_title} ${employee.name} reports to ${employee.boss}.`);
+  }
+  else { console.log(`${employee.Job_title} ${employee.name} doesn't report to anybody.`); }
 }
 
 
-const cipher ={a:2,b:3, c:4, d:5,};
+const cipher = { a: 2, b: 3, c: 4, d: 5, };
 
-function decode(word){
-  if (word[0]<'e'){
-    return word[cipher[word[0]]-1];
+function decode(word) {
+  if (word[0] < 'e') {
+    return word[cipher[word[0]] - 1];
   } else {
     return ' ';
   }
 }
 decode('dycle');
 
-function decodeWords(string){
-  // let sentence= '';
-  // if (string.length <= 4){
-  //   for (let i=0; i<string.length;i++) {
-  //    sentence += decode(string);
-  //  }
-  // } else {
-  //  return 'Word is too short!';
-  // }
-  // console.log(sentence);
+function decodeWords(string) {
+
   string = string.toLowerCase();
   let arrOfStr = string.split(' ');
   console.log(arrOfStr);
@@ -65,12 +61,62 @@ function decodeWords(string){
 }
 decodeWords('Write all function called');
 
-let gandalf = {name:'Gandalf the White', nickname:'gandalf', race:'Wizard', origin:'Middle Earth', attack:10, defense:6, describe(), evaluateFight(character)};
-let bilbo = {name: 'Bilbo Baggins', nickname:'bilbo', race:'Wizard', origin:'The Shire', attack:2,  defense:1, describe(), evaluateFight(character)};
-let frodo = {name: 'Frodo Baggins', nickname:'frodo', race:'Hobbit', origin:'The Shire', attack:3, defense:2, describe(), evaluateFight(character)};
-let aragorn = {name: 'Aragorn son of Arathorn', nickname:'aragorn', race:'Man', origin:'Dunnedain', attack:6, defense:8, describe(), evaluateFight(character)};
-let legolas = {name: 'Legolas', nickname:'legolas', race:'Elf', origin:'Woodland Realm', attack:8, defense:5, describe(), evaluateFight(character)};
 
-function createCharacter(){
+// const gandalf = {name:'Gandalf the White', nickname:'gandalf', race:'Wizard', origin:'Middle Earth', attack:10, defense:6};
+//const bilbo = {name: 'Bilbo Baggins', nickname:'bilbo', race:'Wizard', origin:'The Shire', attack:2,  defense:1};
+// const frodo = {name: 'Frodo Baggins', nickname:'frodo', race:'Hobbit', origin:'The Shire', attack:3, defense:2};
+// const aragorn = {name: 'Aragorn son of Arathorn', nickname:'aragorn', race:'Man', origin:'Dunnedain', attack:6, defense:8};
+// const legolas = {name: 'Legolas', nickname:'legolas', race:'Elf', origin:'Woodland Realm', attack:8, defense:5};//, describe(), evaluateFight(character)};
 
+function createCharacter(name, nickname, race, origin, attack, defense, weapon) {
+
+  return {
+    name, nickname, race, origin, attack, defense, describe: function () {
+      console.log(`${this.name} is a ${this.race} from ${this.origin} who uses ${weapon}.`);
+    }, evaluateFight: function (character) {
+      let x = this.attack - character.defense;
+      let y = character.attack - this.defense;
+      if (x < 0) x = 0;
+      if (y < 0) y = 0;
+      console.log(`Your opponent takes ${x} and you receive ${y} damage`);
+    }
+  };
 }
+
+
+
+
+
+let characters = [createCharacter('Gandalf the White', 'gandalf', 'Wizard', 'Middle Earth', 10, 6,'a wizard staff'),
+  createCharacter('Bilbo Baggins', 'bilbo', 'Hobbit', 'the shire', 2, 1,'the Ring'),
+  createCharacter('Frodo Baggins', 'frodo', 'Hobbit', 'the shire', 3, 2, 'String and Barrow Blade'),
+  createCharacter('Aragorn son of Arathorn', 'aragorn', 'man', 'Dunnedainn', 6, 8, 'Anduril'),
+  createCharacter('Legolas', 'legolas', 'Elf', 'Woodland Realm', 8, 5, 'Bow and Arrow')];
+
+
+characters.push(createCharacter('Arwen Undomiel', 'arwen', 'Half-Elf', 'Rivendell', 7, 9, 'Hadhafang'));
+
+
+let aragorn = characters.find(character => {
+  if (character.nickname === 'aragorn')
+    return true;
+});
+
+aragorn.describe();
+
+let hobbitses = characters.filter(character =>{
+  if (character.race === 'Hobbit') return true;
+});
+
+//hobbitses.forEach(char=>console.log(char));
+
+//characters.forEach(char => console.log(char))
+
+console.log(JSON.stringify(hobbitses));
+
+
+let stronk = characters.filter(char =>{
+  if(char.attack > 5) return true;
+});
+
+console.log(JSON.stringify(stronk));
