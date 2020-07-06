@@ -35,10 +35,14 @@ else{console.log(`${employee.Job_title} ${employee.name} doesn't report to anybo
 }
 
 
-const cipher ={a:2,b:3, c:4, d:5};
+const cipher ={a:2,b:3, c:4, d:5,};
 
 function decoded(word){
-  console.log(word[cipher[word[0]]-1]);
+  if (word[0]<'e'){
+    return word[cipher[word[0]]-1];
+  } else {
+    return ' ';
+  }
 }
 
-decoded('cycle');
+decoded('dycle');
