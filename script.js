@@ -31,5 +31,14 @@ const Scranton = [Jim, Pam, Michael, Angela, Dwight];
 
 for ( const employee of Scranton) {if(employee.boss){
   console.log(`${employee.Job_title} ${employee.name} reports to ${employee.boss}.`);}
-  else{console.log(`${employee.Job_title} ${employee.name} doesn't report to anybody.`);}
+else{console.log(`${employee.Job_title} ${employee.name} doesn't report to anybody.`);}
 }
+
+
+const cipher ={a:2,b:3, c:4, d:5};
+
+function decoded(word){
+  console.log(word[cipher[word[0]]-1]);
+}
+
+decoded('cycle');
