@@ -21,14 +21,15 @@ const hobbitMeals = {meals:['breakfast', 'second breakfast', 'elevenses', 'lunch
 console.log(hobbitMeals.meals[3]);
 
 
-const Jim ={name:'Jim Halpert', Job_title:'Sales'};
-const Pam ={name:'Pam Beasly', Job_title:'Receptionist'};
+const Jim ={name:'Jim Halpert', Job_title:'Salesman', boss:'Michael'};
+const Pam ={name:'Pam Beasly', Job_title:'Receptionist', boss:'Michael'};
 const Michael ={name:'Michael Scott', Job_title:'Regional Manager'};
-const Angela ={name:'Angela', Job_title:'Accountant'};
-const Dwight ={name:'Dwight K Schrute', Job_title:'Assistant to the Regional Manager'};
+const Angela ={name:'Angela', Job_title:'Accountant', boss:'Michael'};
+const Dwight ={name:'Dwight K Schrute', Job_title:'Assistant to the Regional Manager', boss:'Michael'};
 
 const Scranton = [Jim, Pam, Michael, Angela, Dwight];
 
-for ( const employee of Scranton) {
-  console.log(`${employee.name}: ${employee.Job_title}`);
+for ( const employee of Scranton) {if(employee.boss){
+  console.log(`${employee.Job_title} ${employee.name} reports to ${employee.boss}.`);}
+  else{console.log(`${employee.Job_title} ${employee.name} doesn't report to anybody.`);}
 }
