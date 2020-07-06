@@ -47,14 +47,20 @@ function decode(word){
 decode('dycle');
 
 function decodeWords(string){
-  let sentence= '';
-  if (string.length <= 4){
-    for (let i=0; i<string.length;i++) {
-      sentence += decode(string);
-    }
-  } else {
-    return 'Word is too short!';
-  }
-  console.log(sentence);
+  // let sentence= '';
+  // if (string.length <= 4){
+  //   for (let i=0; i<string.length;i++) {
+  //    sentence += decode(string);
+  //  }
+  // } else {
+  //  return 'Word is too short!';
+  // }
+  // console.log(sentence);
+  string = string.toLowerCase();
+  let arrOfStr = string.split(' ');
+  console.log(arrOfStr);
+  let solved = '';
+  arrOfStr.forEach(element => solved += decode(element));
+  console.log(solved);
 }
-decodeWords('Write a function called');
+decodeWords('Write all function called');
