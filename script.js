@@ -14,3 +14,8 @@ const object = {foo:1, bar:2, fum:3, quux:4,spam:'spamspamspam'};
 for ( const property in object) {
   console.log(`${property}:${object[property]}`);
 }
+
+
+const hobbitMeals = {meals:['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper']};
+
+console.log(hobbitMeals.meals[3]);
