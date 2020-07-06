@@ -64,3 +64,13 @@ function decodeWords(string){
   console.log(solved);
 }
 decodeWords('Write all function called');
+
+let gandalf = {name:'Gandalf the White', nickname:'gandalf', race:'Wizard', origin:'Middle Earth', attack:10, defense:6, describe(), evaluateFight(character)};
+let bilbo = {name: 'Bilbo Baggins', nickname:'bilbo', race:'Wizard', origin:'The Shire', attack:2,  defense:1, describe(), evaluateFight(character)};
+let frodo = {name: 'Frodo Baggins', nickname:'frodo', race:'Hobbit', origin:'The Shire', attack:3, defense:2, describe(), evaluateFight(character)};
+let aragorn = {name: 'Aragorn son of Arathorn', nickname:'aragorn', race:'Man', origin:'Dunnedain', attack:6, defense:8, describe(), evaluateFight(character)};
+let legolas = {name: 'Legolas', nickname:'legolas', race:'Elf', origin:'Woodland Realm', attack:8, defense:5, describe(), evaluateFight(character)};
+
+function createCharacter(){
+
+}
