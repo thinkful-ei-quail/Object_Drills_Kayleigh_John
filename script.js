@@ -87,8 +87,8 @@ function createCharacter(name, nickname, race, origin, attack, defense, weapon) 
 
 
 
-let characters = [createCharacter('Gandalf the White', 'gandalf', 'Wizard', 'Middle Earth', 10, 6,'a wizard staff'),
-  createCharacter('Bilbo Baggins', 'bilbo', 'Hobbit', 'the shire', 2, 1,'the Ring'),
+let characters = [createCharacter('Gandalf the White', 'gandalf', 'Wizard', 'Middle Earth', 10, 6, 'a wizard staff'),
+  createCharacter('Bilbo Baggins', 'bilbo', 'Hobbit', 'the shire', 2, 1, 'the Ring'),
   createCharacter('Frodo Baggins', 'frodo', 'Hobbit', 'the shire', 3, 2, 'String and Barrow Blade'),
   createCharacter('Aragorn son of Arathorn', 'aragorn', 'man', 'Dunnedainn', 6, 8, 'Anduril'),
   createCharacter('Legolas', 'legolas', 'Elf', 'Woodland Realm', 8, 5, 'Bow and Arrow')];
@@ -104,7 +104,7 @@ let aragorn = characters.find(character => {
 
 aragorn.describe();
 
-let hobbitses = characters.filter(character =>{
+let hobbitses = characters.filter(character => {
   if (character.race === 'Hobbit') return true;
 });
 
@@ -115,8 +115,56 @@ let hobbitses = characters.filter(character =>{
 console.log(JSON.stringify(hobbitses));
 
 
-let stronk = characters.filter(char =>{
-  if(char.attack > 5) return true;
+let stronk = characters.filter(char => {
+  if (char.attack > 5) return true;
 });
 
-console.log(JSON.stringify(stronk));
+
+
+JSON.stringify(stronk);
+const HEROES = [
+  { id: 1, name: 'Captain America', squad: 'Avengers' },
+  { id: 2, name: 'Iron Man', squad: 'Avengers' },
+  { id: 3, name: 'Spiderman', squad: 'Avengers' },
+  { id: 4, name: 'Superman', squad: 'Justice League' },
+  { id: 5, name: 'Wonder Woman', squad: 'Justice League' },
+  { id: 6, name: 'Aquaman', squad: 'Justice League' },
+  { id: 7, name: 'Hulk', squad: 'Avengers' },
+];
+
+function findOne(arr, query) {
+  //let answer='';
+  if('id' in query&&'name' in query&&'squad' in query){console.log(arr.find(x=>x.id===query.id&&x.name===query.name&&x.squad===query.squad));}
+  else if('id' in query&&'name' in query){console.log(arr.find(x=>Object.is(x.id,query.id)&&Object.is(x.name,query.name)));}
+  else if('id' in query&&'squad' in query){console.log(arr.find(x=>(Object.is(x.id,query.id)&&Object.is(x.squad,query.squad))));}
+  else if('name' in query&&'squad' in query){console.log(arr.find(x=>x.name===query.name&&x.squad===query.squad));}
+  else if('id' in query){console.log(arr.find(x=>Object.is(x.id,query.id)));}
+  else if('name' in query){console.log(arr.find(x=>Object.is(x.name,query.name)));}
+  else if('squad' in query){console.log(arr.find(x=>Object.is(x.squad,query.squad)));}
+  else (console.log('null'));
+
+}
+
+
+
+
+
+//findOne(HEROES, { id: 1 });
+
+//findOne(HEROES, { id: 2 });
+
+//findOne(HEROES, { id: 3 });
+
+//findOne(HEROES, { id: 4 });
+
+
+//findOne(HEROES, { id: 10 });
+
+
+//findOne(HEROES, { id: 2, name: 'Aquaman' });
+
+
+//findOne(HEROES, { id: 5, squad: 'Justice League' });
+
+
+//findOne(HEROES, { squad: 'Justice League' });
