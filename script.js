@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 'use strict';
-
+//exercise 1
 const loaf = {
   flour: 300, water: 210, hydration: function () {
     return this.water / this.flour * 100;
@@ -10,19 +10,19 @@ const loaf = {
 console.log(loaf.flour);
 console.log(loaf.water);
 console.log(loaf.hydration());
-
+//exercise 2
 const object = { foo: 1, bar: 2, fum: 3, quux: 4, spam: 'spamspamspam' };
 
 for (const property in object) {
   console.log(`${property}:${object[property]}`);
 }
 
-
+//exercise 3
 const hobbitMeals = { meals: ['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper'] };
 
 console.log(hobbitMeals.meals[3]);
 
-
+//exercise 4
 const Jim = { name: 'Jim Halpert', Job_title: 'Salesman', boss: 'Michael' };
 const Pam = { name: 'Pam Beasly', Job_title: 'Receptionist', boss: 'Michael' };
 const Michael = { name: 'Michael Scott', Job_title: 'Regional Manager' };
@@ -30,7 +30,7 @@ const Angela = { name: 'Angela', Job_title: 'Accountant', boss: 'Michael' };
 const Dwight = { name: 'Dwight K Schrute', Job_title: 'Assistant to the Regional Manager', boss: 'Michael' };
 
 const Scranton = [Jim, Pam, Michael, Angela, Dwight];
-
+//exercise 5
 for (const employee of Scranton) {
   if (employee.boss) {
     console.log(`${employee.Job_title} ${employee.name} reports to ${employee.boss}.`);
@@ -38,7 +38,7 @@ for (const employee of Scranton) {
   else { console.log(`${employee.Job_title} ${employee.name} doesn't report to anybody.`); }
 }
 
-
+//exercise 6
 const cipher = { a: 2, b: 3, c: 4, d: 5, };
 
 function decode(word) {
@@ -61,6 +61,8 @@ function decodeWords(string) {
 }
 decodeWords('Write all function called');
 
+
+//exercise 7
 
 // const gandalf = {name:'Gandalf the White', nickname:'gandalf', race:'Wizard', origin:'Middle Earth', attack:10, defense:6};
 //const bilbo = {name: 'Bilbo Baggins', nickname:'bilbo', race:'Wizard', origin:'The Shire', attack:2,  defense:1};
@@ -98,7 +100,7 @@ characters.push(createCharacter('Arwen Undomiel', 'arwen', 'Half-Elf', 'Rivendel
 
 
 let aragorn = characters.find(character => {
-  if (character.nickname === 'aragorn')
+  if (character.nickname === 'legolas')
     return true;
 });
 
@@ -120,7 +122,7 @@ let stronk = characters.filter(char => {
 });
 
 
-
+//exercise 8
 JSON.stringify(stronk);
 const HEROES = [
   { id: 1, name: 'Captain America', squad: 'Avengers' },
@@ -149,9 +151,9 @@ function findOne(arr, query) {
 
 
 
-//findOne(HEROES, { id: 1 });
+findOne(HEROES, { id: 1 });
 
-//findOne(HEROES, { id: 2 });
+findOne(HEROES, { id: 2 });
 
 //findOne(HEROES, { id: 3 });
 
